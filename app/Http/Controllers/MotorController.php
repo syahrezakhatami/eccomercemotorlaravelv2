@@ -37,7 +37,15 @@ class MotorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        product::create([
+            "kode_produk" => $request->KodeProduk,
+            "nama" => $request->nama,
+            "deskripsi" => $request->desc,
+
+
+        ]);
+
+        return redirect()->route('motor.index');
     }
 
     /**
