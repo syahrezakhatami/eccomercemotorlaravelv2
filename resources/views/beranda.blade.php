@@ -1,6 +1,6 @@
-@extends ('template')
+@extends ('layouts.app')
 
-@section('templateinfo')
+@section('content')
 <div class="container" style="min-height: 500px">
     <div class="card my-3">
         <div class="card-body">
@@ -8,20 +8,22 @@
             <a href="{{route('motor.create')}}">Add Motor</a>
             <table class="table table-bordered table-stripped">
                 <tr>
-                    <th>Brand</th>
-                    <th>Harga</th>
-                    <th>Gambar</th>
+                    <th>Kode Produk</th>
+                    <th>Nama</th>
+                    <th>Deskripsi</th>
                     <th>Aksi</th>
                 </tr>
+                @foreach ($products as $product)
                 <tr>
-                    <td>Yamaha R1</th>
-                    <td>Rp 1.000.000.000</th>
-                    <td><img src="{{asset('storage/r1.jpg')}}" alt="" height= 50px; padding="50px;"></th>
+                    <td>{{$product->kode_produk}}</td>
+                    <td>{{$product->nama}}</td>
+                    <td>{{$product->deskripsi}}</td>
                     <td>
                         <a class="btn btn-warning" href="mainedit">Edit</a>
                         <a class="btn btn-danger" href="#">Delete</a>
                     </td>
                 </tr>
+                @endforeach
             </table>
         </div>
     </div>

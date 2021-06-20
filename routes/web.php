@@ -47,7 +47,7 @@ Route::get('/kartutandapenduduk', [PageController::class, 'ktpsaya']);
 
 Route::get('/suratizinmengemudi', [PageController::class, 'simsaya']);
 
-Route::get('mainlogin', [PageController::class, 'main']);
+//Route::get('mainlogin', [PageController::class, 'main']);
 
 Route::get('mainregister', [PageController::class, 'regis']);
 
@@ -59,3 +59,7 @@ Route::get('/tambah', [PageController::class, 'create']);
 
 Route::get('/ubah', [PageController::class, 'edit']);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

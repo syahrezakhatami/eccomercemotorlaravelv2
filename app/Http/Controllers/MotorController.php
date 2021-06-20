@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class MotorController extends Controller
@@ -13,7 +13,10 @@ class MotorController extends Controller
      */
     public function index()
     {
-        return view('beranda');
+
+        $dataProduk = Product::all();
+
+        return view('beranda', ["products" => $dataProduk]);
     }
 
     /**
